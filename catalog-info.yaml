@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: single-hummingbird-java-springboot-gitops
+  description: This is GitOps manifest for single-hummingbird-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: single-hummingbird-java-springboot
+    janus-idp.io/tekton: single-hummingbird-java-springboot 
+    backstage.io/kubernetes-id: single-hummingbird-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:single-hummingbird-java-springboot
